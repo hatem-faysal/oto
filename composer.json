@@ -10,9 +10,7 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {
-        "hatemfaysal/oto": "dev-master"
-    },
+    "require": {},
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
