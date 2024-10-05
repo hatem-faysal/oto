@@ -63,13 +63,25 @@ class Oto {
 
         $data = [
           "orderId"           => $orderData['orderId'],
-          "payment_method"    => $orderData['payment_method'],
-          "amount"            => $orderData['amount'],
+          "pickupLocationCode"    => $orderData['pickupLocationCode'],
+          "createShipment"            => $orderData['createShipment'],
+          "deliveryOptionId"        => $orderData['deliveryOptionId'],
+          "payment_method"        => $orderData['payment_method'],
+          "amount"        => $orderData['amount'],
           "amount_due"        => $orderData['amount_due'],
           "currency"          => config('oto.currency'),
+          "customsValue"      => $orderData['customsValue'],
+          "customsCurrency"          => config('oto.currency'),
           "packageCount"      => $orderData['packageCount'],
-          "packageWeight"     => $orderData['packageWeight'],
-          "orderDate"         => $orderData['orderDate'],
+          "packageWeight"      => $orderData['packageWeight'],
+          "boxWidth"      => $orderData['boxWidth'],
+          "boxLength"      => $orderData['boxLength'],
+          "boxHeight"      => $orderData['boxHeight'],
+          "orderDate"      => $orderData['orderDate'],
+          "deliverySlotDate"      => $orderData['deliverySlotDate'],
+          "deliverySlotTo"      => $orderData['deliverySlotTo'],
+          "deliverySlotFrom"      => $orderData['deliverySlotFrom'],
+          "senderName"      => $orderData['senderName'],
           "customer" => [
               "name"      => $customeData['name'],
               "email"     => $customeData['email'],
@@ -79,7 +91,10 @@ class Oto {
               "city"      => $addressData['city'],
               "country"   => $addressData['country'],
               "lat"       => $addressData['lat'],
-              "lon"       => $addressData['lng']
+              "lon"       => $addressData['lng'],
+              "postcode"   => $addressData['postcode'],
+              "refID"       => $addressData['refID'],
+              "W3WAddress"       => $addressData['W3WAddress']
           ],
           "items" => $items
         ];
