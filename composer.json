@@ -10,7 +10,9 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "hatemfaysal/oto": "^1.0@beta"
+    },
     "autoload": {
         "psr-4": {
             "Hatemfaysal\\Oto\\" : "src/",
