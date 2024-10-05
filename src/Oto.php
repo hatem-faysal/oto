@@ -37,10 +37,12 @@ class Oto {
     public static function checkDeliveryFee($itemDetails = []){
         Oto::refreshToken();
         $data = [
-          'weight'            => $itemDetails['weight'],
-          'totalDue'          => $itemDetails['totalDue'],
-          'originCity'        => $itemDetails['originCity'],
-          'destinationCity'   => $itemDetails['destinationCity'],
+          "weight"           => $itemDetails['weight'],
+          "originCity"           => $itemDetails['originCity'],
+          "destinationCity"           => $itemDetails['destinationCity'],
+          "height"           => $itemDetails['height'],
+          "width"           => $itemDetails['width'],
+          "length"           => $itemDetails['length'],
         ];
 
         $url = config('oto.mode') == 'live' ? config('oto.live_urls')['check_delivery_fee'] : config('oto.test_urls')['check_delivery_fee'];

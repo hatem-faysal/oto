@@ -43,7 +43,7 @@ use Hatemfaysal\Oto\Oto;
 
 ```php
 use Hatemfaysal\Oto\Oto;
-    $itemDetails = ["height"=> 10,"width"=> 10,"length"=> 10,'originCity' => 'riyadh','destinationCity' => 'Jeddah'];
+    $itemDetails = ["height"=> 10,"width"=> 10,"length"=> 10,"weight"=> 10,'originCity' => 'riyadh','destinationCity' => 'Jeddah'];
     $response = Oto::checkDeliveryFee($itemDetails); 
 
 ```
