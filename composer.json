@@ -9,9 +9,8 @@
             "email": "hatemfaysal15@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {},
-    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Hatemfaysal\\Oto\\" : "src/",
