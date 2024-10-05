@@ -4,12 +4,12 @@
 You can install the package via [Composer](https://getcomposer.org).
 
 ```bash
-composer require hatem/oto
+composer require tryoto/oto
 ```
 Publish your oto config file with
 
 ```bash
-php artisan vendor:publish --provider="Hatem\Oto\OtoServiceProvider" --tag="oto"
+php artisan vendor:publish --provider="Tryoto\Oto\OtoServiceProvider" --tag="oto"
 ```
 then change your oto config from config/oto.php file
 ```php
@@ -22,7 +22,7 @@ then change your oto config from config/oto.php file
 ## Get Available Cities
 
 ```php
-use Hatem\Oto\Oto;
+use Tryoto\Oto\Oto;
     $response = Oto::availableCities($limit , $page); 
 
 ```
@@ -31,7 +31,7 @@ use Hatem\Oto\Oto;
 ## Check Delivery Fee
 
 ```php
-use Hatem\Oto\Oto;
+use Tryoto\Oto\Oto;
     $itemDetails = ['weight' => 50 ,'totalDue' => 0 ,'originCity' => 'Riyadh','destinationCity' => 'Jeddah'];
     $response = Oto::checkDeliveryFee($itemDetails); 
 
@@ -41,7 +41,7 @@ use Hatem\Oto\Oto;
 ## Create Order
 
 ```php
-use Hatem\Oto\Oto;
+use Tryoto\Oto\Oto;
     $orderData   = ['orderId' => 1 ,'payment_method' => 'paid', 'amount' => '40','amount_due' => 0,'packageCount' => 10,'packageWeight' => 1 , 'orderDate' => '2022-06-12 22:30'];
     $customeData = ['name' =>'mohamed hatem' ,'email' => 'h7mdHatem26@gmail.com' , 'mobile' => '010027*****'];
     $addressData = ['address' => '20 ,hatem street, almehalla alkubra,Saudi Arabia','district' => 'hatem district' ,'city' => 'almehalla' ,'country' => 'SA' ,'lat' => '30.837645','lng' => '30.23456'];
@@ -54,7 +54,7 @@ use Hatem\Oto\Oto;
 ## Cancel Order
 
 ```php
-use Hatem\Oto\Oto;
+use Tryoto\Oto\Oto;
 
     $response = Oto::cancelOrder($orderId);
 
@@ -63,7 +63,7 @@ use Hatem\Oto\Oto;
 ## get Order status
 
 ```php
-use Hatem\Oto\Oto;
+use Tryoto\Oto\Oto;
 
     $response = Oto::orderStatus($orderId);
 
@@ -73,7 +73,7 @@ use Hatem\Oto\Oto;
 ## Create Shipment
 
 ```php
-use Hatem\Oto\Oto;
+use Tryoto\Oto\Oto;
 
     $response = Oto::createShipment($orderId, $deliveryOptionId);
 
@@ -83,7 +83,7 @@ use Hatem\Oto\Oto;
 ## Create return Shipment
 
 ```php
-use Hatem\Oto\Oto;
+use Tryoto\Oto\Oto;
 
     $response = Oto::createReturnShipment($orderId);
 

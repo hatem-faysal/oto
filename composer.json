@@ -1,5 +1,5 @@
 {
-    "name": "hatem/oto",
+    "name": "tryoto/oto",
     "description": "package to integrate with oto shipping company api",
     "type": "library",
     "license": "MIT",
@@ -13,14 +13,14 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Hatem\\Oto\\" : "src/",
-            "Hatem\\Oto\\Tests\\": "tests/"
+            "Tryoto\\Oto\\" : "src/",
+            "Tryoto\\Oto\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Hatem\\Oto\\OtoServiceProvider"
+                "Tryoto\\Oto\\OtoServiceProvider"
             ]
         }
     }       
