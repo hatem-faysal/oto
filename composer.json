@@ -1,0 +1,28 @@
+{
+    "name": "hatem/oto",
+    "description": "package to integrate with oto shipping company api",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hatem faysal",
+            "email": "hatemfaysal15@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Hatem\\Oto\\" : "src/",
+            "Hatem\\Oto\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hatem\\Oto\\OtoServiceProvider"
+            ]
+        }
+    }       
+}
+
