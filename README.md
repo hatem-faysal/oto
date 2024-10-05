@@ -20,35 +20,51 @@ then change your oto config from config/oto.php file
 ```
 ## Usage
 
-## Get Available Cities
-
-```php
-use Hatemfaysal\Oto\Oto;
-    $response = Oto::availableCities($limit , $page); 
-
-```
-
-
-## Check Delivery Fee
-
-```php
-use Hatemfaysal\Oto\Oto;
-    $itemDetails = ['weight' => 50 ,'totalDue' => 0 ,'originCity' => 'Riyadh','destinationCity' => 'Jeddah'];
-    $response = Oto::checkDeliveryFee($itemDetails); 
-
-```
 
 
 ## Create Order
 
 ```php
 use Hatemfaysal\Oto\Oto;
-    $orderData   = ['orderId' => 1 ,'payment_method' => 'paid', 'amount' => '40','amount_due' => 0,'packageCount' => 10,'packageWeight' => 1 , 'orderDate' => '2022-06-12 22:30'];
-    $customeData = ['name' =>'mohamed maree' ,'email' => 'm7mdmaree26@gmail.com' , 'mobile' => '010027*****'];
-    $addressData = ['address' => '20 ,maree street, almehalla alkubra,Saudi Arabia','district' => 'maree district' ,'city' => 'almehalla' ,'country' => 'SA' ,'lat' => '30.837645','lng' => '30.23456'];
-    $items       = [ ["productId" => '123', "name"      => 'book', "price"     => '12', "rowTotal"  => '15', "taxAmount" => '3', "quantity"  => '2', "sku"  => 'arabic_book', "image"     => ''] , ["productId" => '145', "name"      => 'math book', "price"     => '18', "rowTotal"  => '20', "taxAmount" => '1', "quantity"  => '3', "sku"  => 'math_book', "image"     => '']];
+    $orderData   = ["orderId"=> "1","pickupLocationCode"=> "code-020","createShipment"=> "true","deliveryOptionId"=> 564,"payment_method"=> "paid","amount"=> 100,
+    "amount_due"=> 0,"currency"=> "SAR","customsValue"=>"12","customsCurrency"=>"USD","packageCount"=> 2,"packageWeight"=> 1,"boxWidth"=>10,"boxLength"=> 10,"boxHeight"=> 10,
+    "orderDate"=> "19/12/2024 15:45","deliverySlotDate"=> "19/12/2024","deliverySlotTo"=> "12pm","deliverySlotFrom"=> "2:30pm","senderName"=>"Sender Company"];
+    $customeData = ["name"=> "عبدالله الغامدي","email"=> "test@test.com","mobile"=> "546607389"];
+    $addressData = ["address"=> "6832, Abruq AR Rughamah District, Jeddah 22272 3330, Saudi Arabia","district"=> "Al Hamra","city"=> "Jeddah","country"=> "SA","postcode"=> "12345","lat"=> "40.706333","lng"=> "29.888211","refID"=>"1000012","W3WAddress"=>"alarmed.cards.stuffy"];
+    $items       = [ ["productId"=> 112,"name"=> "test product","price"=> 100,"rowTotal"=> 100,"taxAmount"=> 15,"quantity"=> 1,"sku"=> "test-product","image"=> "http://...."] , ["name"=> "test product 2","price"=> 100,"quantity"=> 1,"sku"=> "test-product-2"]];
     $response = Oto::createOrder($orderData ,$customeData ,$addressData ,$items);
 
+
+```
+
+
+
+## Check Delivery Fee
+
+```php
+use Hatemfaysal\Oto\Oto;
+    $itemDetails = ["height"=> 10,"width"=> 10,"length"=> 10,'originCity' => 'riyadh','destinationCity' => 'Jeddah'];
+    $response = Oto::checkDeliveryFee($itemDetails); 
+
+```
+
+
+## Create Shipment
+
+```php
+use Hatemfaysal\Oto\Oto;
+
+    $response = Oto::createShipment($orderId, $deliveryOptionId);
+
+
+```
+
+
+## Get Available Cities
+
+```php
+use Hatemfaysal\Oto\Oto;
+    $response = Oto::availableCities($limit , $page); 
 
 ```
 
@@ -71,15 +87,7 @@ use Hatemfaysal\Oto\Oto;
 ```
 
 
-## Create Shipment
 
-```php
-use Hatemfaysal\Oto\Oto;
-
-    $response = Oto::createShipment($orderId, $deliveryOptionId);
-
-
-```
 
 ## Create return Shipment
 
