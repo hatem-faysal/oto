@@ -10,7 +10,11 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "hatemfaysal/oto": "dev-master"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Hatemfaysal\\Oto\\" : "src/",
