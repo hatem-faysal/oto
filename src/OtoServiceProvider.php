@@ -1,5 +1,5 @@
 <?php
-namespace Tryoto\Oto;
+namespace Hatemfaysal\Oto;
 
 use Illuminate\Support\ServiceProvider;
 

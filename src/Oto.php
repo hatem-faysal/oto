@@ -1,5 +1,5 @@
 <?php
-namespace Tryoto\Oto;
+namespace Hatemfaysal\Oto;
 
 use Illuminate\Support\Facades\Http;
 
@@ -55,8 +55,8 @@ class Oto {
     }
     
     // $orderData   = ['orderId' => 1 ,'payment_method' => 'paid', 'amount' => '40','amount_due' => 0,'packageCount' => 10,'packageWeight' => 1 , 'orderDate' => '2022-06-12 22:30'];
-    // $customeData = ['name' =>'mohamed hatem' ,'email' => 'h7mdHatem26@gmail.com' , 'mobile' => '010027*****'];
-    // $addressData = ['address' => '20 ,hatem street, almehalla alkubra,Saudi Arabia','district' => 'hatem district' ,'city' => 'almehalla' ,'country' => 'SA' ,'lat' => '30.837645','lng' => '30.23456'];
+    // $customeData = ['name' =>'mohamed maree' ,'email' => 'm7mdmaree26@gmail.com' , 'mobile' => '010027*****'];
+    // $addressData = ['address' => '20 ,maree street, almehalla alkubra,Saudi Arabia','district' => 'maree district' ,'city' => 'almehalla' ,'country' => 'SA' ,'lat' => '30.837645','lng' => '30.23456'];
     // $items       = ["productId" => '123', "name"      => 'book', "price"     => '12', "rowTotal"  => '15', "taxAmount" => '3', "quantity"  => '2', "sku"  => 'arabic_book', "image"     => ''];
     public static function createOrder($orderData = [],$customeData = [],$addressData = [],$items = []){
         Oto::refreshToken();
