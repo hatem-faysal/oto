@@ -10,10 +10,7 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {
-        "php": "^8.0",
-        "hatemfaysal/oto": "^1.0@beta"
-    },
+    "require": {},
     "autoload": {
         "psr-4": {
             "Hatemfaysal\\Oto\\" : "src/",
