@@ -17,6 +17,21 @@ class Oto {
         return json_decode($response)->access_token;
     }
 
+    public static function getCities($country = null, $perPage = null,$page = null){
+        Oto::refreshToken();
+        $data = ["country" => $country , 'perPage' => $perPage,'page'=>$page];
+
+ 
+        $url = config('oto.mode') == 'live' ? config('oto.live_urls')['getCities'] : config('oto.test_urls')['getCities'];
+        $response = Http::withHeaders([
+            'Accept'        => 'application/json',
+            'Content-Type'  => 'application/json',
+            'Authorization' => 'Bearer ' . config('oto.access_token')
+        ])->post($url, $data);
+
+        $responseResult = json_decode($response->getBody()->getContents(), true);
+        return json_encode($responseResult);
+    }
 
     public static function availableCities($limit = 10,$page = 1){
         Oto::refreshToken();
